@@ -1,0 +1,94 @@
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, Arial, Sans-serif;
+	font-size: 13px;
+	background-color: grey;
+}
+
+.container {
+	width: 600px;
+	margin: 50px auto 20px;
+	
+}
+
+.title {
+	font-size: 30px;
+	font-weight: bold;
+	font-family: "Courier New", Monospace;
+	text-shadow: #ccc 2px 2px 1px;
+	padding-bottom: 5px;
+}
+
+.chat {
+	border: 1px solid #73dbe2;
+	height: 400px;
+	/*overflow-y: scroll;*/
+	background-color: white;
+	border-radius: 10px;
+}
+
+.chat div {
+	margin: 10px 12px 15px;
+	line-height: 20px;
+}
+
+.chat .party {
+	font-weight: bold;
+}
+
+.chat .you {
+	color: #5b11db;
+}
+
+.chat .other {
+	color: #51b5bc;
+}
+
+.chat .text {
+	
+}
+
+.busy {
+	position: absolute;
+	padding: 3px 0;
+	color: white;
+	display: none;
+	font-size: 11px;
+}
+
+.input {
+	margin-top: 20px;
+}
+
+.input input {
+	vertical-align: top;
+	float: left;
+	border: 1px solid #73dbe2;
+	padding: 5px;
+	width: 480px;
+	margin: 0;
+	border-radius: 5px;
+}
+
+.input a {
+	vertical-align: top;
+	float: right;
+	font-weight: bold;
+	border: 1px solid #73dbe2;
+	background-color: white;
+	padding: 7px 35px;
+	color: #51b5bc;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.input a:hover {
+	/*background-color: #ddd;*/
+	border: 2px solid #73dbe2;
+	cursor: pointer;
+}

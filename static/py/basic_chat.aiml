@@ -1,0 +1,194 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<?xml-stylesheet type = "text/xsl" href = "dummy.xsl"?>
+<aiml version="1.0.1" encoding = "UTF-8">
+<!-- basic_chat.aiml -->
+    
+    <!-- Introduction du Chatbot -->
+    <category>
+        <pattern>INIT</pattern>
+        <template>
+            Hi Have we had the chance to meet
+        </template>
+    </category>
+    
+    <category>
+      <pattern>YES</pattern>
+      <that>HI HAVE WE HAD THE CHANCE TO MEET</that>
+      <template>Good to see you here again, What do you want to do today?</template>
+    </category>
+
+    <category>
+      <pattern>NO</pattern>
+      <that>HI HAVE WE HAD THE CHANCE TO MEET</that>
+      <template>Let me introduce myself I am a robot designed to help you with your marketing campaign I can either give you information about marketing campaigns in general or accompany you with your very own campaign What would you like to do</template>
+    </category>
+
+    <category>
+      <pattern>*</pattern>
+      <that>LET ME INTRODUCE MYSELF I AM A ROBOT DESIGNED TO HELP YOU WITH YOUR MARKETING CAMPAIGN I CAN EITHER GIVE YOU INFORMATION ABOUT MARKETING CAMPAIGNS IN GENERAL OR ACCOMPANY YOU WITH YOUR VERY OWN CAMPAIGN WHAT WOULD YOU LIKE TO DO</that>
+      <template>I want to remember you so I will give you the following Session number:</template>
+    </category>
+
+    <!-- Creation de campagne -->
+    <category>
+        <pattern>CREATE CAMPAIGN</pattern>
+        <template>
+            Pick a name for your campaign 
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <that>PICK A NAME FOR YOUR CAMPAIGN</that>
+        <template>
+            Your campaign is now called <set name="campaignName"><star/></set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>BUDGET</pattern>
+        <template>
+            What is your budget for this campaign
+        </template>
+    </category>
+
+    <category>
+        <pattern>MY BUDGET IS * DOLLARS</pattern>
+        <that>WHAT IS YOUR BUDGET FOR THIS CAMPAIGN</that>
+        <template>
+            Your budget is <set name="campaignBudget"><star/></set> dollars
+        </template>
+    </category>
+
+    <category>
+        <pattern>GOAL</pattern>
+        <template>
+            What is your goal for this campaign
+            awareness
+            conversion
+            or sale
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <that>
+          WHAT IS YOUR GOAL FOR THIS CAMPAIGN
+          AWARENESS
+          CONVERSION
+          OR SALE
+        </that>
+        <template>
+            Your goal is <set name="campaignGoal"><star/></set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>TYPE</pattern>
+        <template>
+            What type of campaign do you want to do
+            display or search
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <that>
+          WHAT TYPE OF CAMPAIGN DO YOU WANT TO DO
+          DISPLAY OR SEARCH
+        </that>
+        <template>
+            A <set name="campaignType"><star/></set> sounds good to me
+        </template>
+    </category>
+
+    <category>
+        <pattern>START DATE</pattern>
+        <template>
+            When do you want to start your campaign please enter a date following the format ddmmyyyy
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <that>WHEN DO YOU WANT TO START YOUR CAMPAIGN PLEASE ENTER A DATE FOLLOWING THE FORMAT DDMMYYYY</that>
+        <template>
+            We will start on <set name="dateDebut"><star/></set> When do you want the campaign to end the format is still ddmmyyyy
+        </template>
+    </category>
+
+    <!-- Gestion du nom de la campagne -->
+    <category>
+        <pattern>* IS MY CAMPAIGN NAME</pattern>
+        <template>
+            The name of your campaign is <get name="campaignName"></get>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS MY CAMPAIGN NAME *</pattern>
+        <template>
+          The name of your campaign is <get name="campaignName"></get>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* RENAME MY CAMPAIGN</pattern>
+        <template>
+          Enter your new Campaign name
+        </template>
+    </category>
+
+    <category>
+        <pattern>RENAME MY CAMPAIGN</pattern>
+        <template>
+          Enter your new Campaign name
+        </template>
+    </category>
+
+    <category>
+        <pattern>RENAME MY CAMPAIGN TO *</pattern>
+        <template>
+            Your campaign is now called<set name="campaignName"> <star/> </set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <that>ENTER YOUR NEW CAMPAIGN NAME</that>
+        <template>
+            Your campaign is now called<set name="campaignName"> <star/> </set>
+        </template>
+    </category>
+
+    <!-- Interrogations générales -->
+    <category>
+        <pattern>SHOW</pattern>
+        <template>
+            -<that/>-
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT * ARE YOU</pattern>
+        <template>
+            Im a bot here to help you with your marketing campaign on Google Do you need help with anything
+        </template>
+    </category>
+
+    <category>
+        <pattern>* WHAT CAN YOU DO</pattern>
+        <template>
+            Im a bot here to help you with your marketing campaign on Google Do you need help with anything
+        </template>
+    </category>
+
+
+    <category>
+      <pattern>* ARE YOU</pattern>
+      <template>
+        <srai>WHAT ARE YOU</srai>
+      </template>
+   </category>
+    
+</aiml>
